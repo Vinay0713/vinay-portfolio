@@ -1,6 +1,10 @@
 # vinay-portfolio
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Vinay0713/vinay-portfolio)
+
 Freelance portfolio site — a single static `index.html`, no build step, no dependencies.
+
+Live: https://vinay-portfolio.onrender.com (once the first deploy finishes)
 
 ## Local preview
 
@@ -14,7 +18,8 @@ python -m http.server 8000
 
 The repo contains `render.yaml`, so Render can configure the service itself:
 
-1. Go to https://dashboard.render.com/blueprints and choose **New Blueprint Instance**.
+1. Click the **Deploy to Render** button above (or go to
+   https://dashboard.render.com/blueprints and choose **New Blueprint Instance**).
 2. Pick this repository and apply. Render reads `render.yaml` and creates a static site.
 3. Every push to `main` redeploys automatically.
 
