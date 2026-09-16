@@ -1,0 +1,21 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploys this folder as a static site on Render's free static hosting.
+services:
+  - type: web
+    name: vinay-portfolio
+    runtime: static
+    buildCommand: echo "Static site - no build step"
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      # single-page site: send any unknown path to the homepage
+      - type: rewrite
+        source: /*
+        destination: /index.html
