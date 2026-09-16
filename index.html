@@ -192,7 +192,25 @@ section{border-bottom:1px solid var(--line)}
 .result{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-soft);font-family:var(--mono);font-size:12px;color:var(--ink-dim);font-variant-numeric:tabular-nums}
 .result b{color:var(--accent);font-weight:500}
 
+.chip-live{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:3px 7px;border-radius:2px;background:color-mix(in srgb,var(--live) 15%,transparent);color:var(--live);border:1px solid color-mix(in srgb,var(--live) 40%,transparent);align-self:flex-start}
+.result a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent)}
+.result a:hover{border-bottom-color:var(--accent)}
+.proj p.note{font-size:11.5px;line-height:1.45;color:var(--muted);opacity:.85}
+#work .grid3{padding-bottom:26px}
+
+.callout{display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:5px;
+  background:var(--panel);padding:24px 26px;margin-bottom:56px;box-shadow:var(--shadow)}
+.callout h3{font-size:19px;font-weight:600}
+.callout p{margin:9px 0 0;color:var(--muted);font-size:14.5px;max-width:60ch}
+
 /* CSS-drawn placeholder visuals */
+.form-viz{position:absolute;inset:14px;border:1px solid var(--line);border-radius:3px;background:var(--panel);display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+.form-viz b{display:flex;gap:4px;padding:7px;background:var(--panel-2);border-bottom:1px solid var(--line)}
+.form-viz b i{display:block;height:7px;flex:1;border-radius:2px;background:var(--line)}
+.form-viz b i:first-child{background:var(--accent)}
+.form-viz s{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:11px;text-decoration:none}
+.form-viz s em{display:block;height:14px;border:1px solid var(--line);border-radius:2px;background:var(--panel-2)}
 .viz{position:absolute;inset:0;padding:16px;display:flex;gap:6px;align-items:flex-end}
 .viz i{flex:1;background:linear-gradient(to top,color-mix(in srgb,var(--accent) 65%,transparent),color-mix(in srgb,var(--accent) 18%,transparent));border-radius:2px 2px 0 0;display:block}
 .wire{position:absolute;inset:14px;border:1px solid var(--line);border-radius:3px;display:grid;grid-template-rows:14px 1fr;overflow:hidden;background:var(--panel)}
@@ -273,7 +291,7 @@ html{scroll-behavior:smooth}
       <div>
         <p class="eyebrow"><span class="dash"></span>Freelance developer &amp; designer</p>
         <h1>Websites, dashboards and the <em>data</em> behind them.</h1>
-        <p class="lede">I build fast, well-tested web applications and turn messy business data into dashboards people actually use — from a one-page site to a full analytics pipeline. Clear scope, fixed price, code you own at the end.</p>
+        <p class="lede">I build custom web forms, portals and dashboards that capture business data cleanly at the source — so the lookups, pivots and reports afterwards simply work, with no re-typing and no chasing documents by email. Clear scope, fixed price, code you own at the end.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contact">Get a quote</a>
           <a class="btn btn-ghost" href="#work">See sample work</a>
@@ -286,6 +304,7 @@ html{scroll-behavior:smooth}
           <div><dt>Replies within</dt><dd>12 hours</dd></div>
           <div><dt>Time zone</dt><dd>IST (UTC+5:30)</dd></div>
           <div><dt>Engagement</dt><dd>Fixed-price or hourly</dd></div>
+          <div><dt>Working demo</dt><dd>2–5 days</dd></div>
           <div><dt>Typical build</dt><dd>1–4 weeks</dd></div>
           <div><dt>Handover</dt><dd>Source + docs</dd></div>
         </dl>
@@ -298,7 +317,22 @@ html{scroll-behavior:smooth}
       <div class="sec-head">
         <span class="tag">01 — Services</span>
         <h2>What I take on</h2>
-        <p>Three lanes, often combined on one project: build it, measure it, make it look right.</p>
+        <p>Four lanes, usually combined on one project: capture the data, build the thing, measure it, make it look right.</p>
+      </div>
+
+      <div class="svc">
+        <div>
+          <h3>Data-capture forms &amp; portals</h3>
+          <p>Custom web forms that replace spreadsheet, paper and email intake — structured, validated, and ready to analyse the moment they are submitted.</p>
+          <div class="stack"><span>Multi-step forms</span><span>Validation</span><span>File uploads</span><span>Excel / CSV export</span><span>SQL</span></div>
+        </div>
+        <ul>
+          <li>Long intake split into sections people can complete in stages and return to</li>
+          <li>Field-level validation at the point of entry, so bad data never reaches the sheet</li>
+          <li>Supporting documents uploaded against the right record instead of chased by email</li>
+          <li>One clean, consistent table out — VLOOKUP, pivot tables and filters work with no cleanup</li>
+          <li>Query the data directly in SQL, or schedule an export to Excel on a timetable</li>
+        </ul>
       </div>
 
       <div class="svc">
@@ -352,18 +386,19 @@ html{scroll-behavior:smooth}
       <div class="sec-head">
         <span class="tag">02 — Work</span>
         <h2>Selected projects</h2>
-        <p>The three below are sample layouts showing how a project is presented. Swap in your own once live.</p>
+        <p>The first is live and open to try. The two after it are sample layouts, marked as such.</p>
       </div>
 
       <div class="grid3">
-        <!-- PROJECT 1 — replace copy, remove the SAMPLE chip, swap .thumb for a screenshot -->
+        <!-- PROJECT 1 — real, live -->
         <article class="proj">
-          <div class="thumb"><div class="viz" aria-hidden="true"><i style="height:38%"></i><i style="height:62%"></i><i style="height:47%"></i><i style="height:81%"></i><i style="height:56%"></i><i style="height:94%"></i><i style="height:70%"></i></div></div>
+          <div class="thumb"><div class="form-viz" aria-hidden="true"><b><i></i><i></i><i></i><i></i></b><s><em></em><em></em><em></em><em></em><em></em><em></em></s></div></div>
           <div class="proj-body">
-            <span class="chip-sample">SAMPLE</span>
-            <h3>Sales reporting dashboard</h3>
-            <p>Replaced a weekly manual spreadsheet with a database-backed dashboard refreshing every morning.</p>
-            <p class="result">Reporting time <b>6 hrs → 0</b> per week</p>
+            <span class="chip-live">LIVE DEMO</span>
+            <h3>Debtor information portal</h3>
+            <p>A ten-section intake form — personal details, employment, income, assets, liabilities, expenses — that replaced a spreadsheet-and-email process. Every submission lands in one structured table with its supporting documents attached to the right record.</p>
+            <p class="result"><a href="https://debtor-info.onrender.com" target="_blank" rel="noopener noreferrer">Open the live demo →</a></p>
+            <p class="note">Hosted on a free instance — the first load can take up to a minute while it wakes.</p>
           </div>
         </article>
 
@@ -391,6 +426,14 @@ html{scroll-behavior:smooth}
             <p class="result">New screens shipped <b>3× faster</b></p>
           </div>
         </article>
+      </div>
+
+      <div class="callout">
+        <div>
+          <h3>Want this adapted to your business?</h3>
+          <p>Any of these can be rebranded, rebuilt around your own fields and deployed to your own domain. Send me the list of what you need captured and I'll put a working version online for you to try — usually within a few days, not weeks.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Get it customised</a>
       </div>
     </div>
   </section>
